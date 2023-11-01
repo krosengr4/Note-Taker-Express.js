@@ -1,3 +1,5 @@
+//! Handles the main javascript for showing elements, and saving and deleting notes.
+
 let noteForm;
 let noteTitle;
 let noteText;
@@ -119,9 +121,9 @@ const handleNewNoteView = (e) => {
 const handleRenderBtns = () => {
   show(clearBtn);
   if (!noteTitle.value.trim() && !noteText.value.trim()) {
-    hide(clearBtn);
+    show(clearBtn);
   } else if (!noteTitle.value.trim() || !noteText.value.trim()) {
-    hide(saveNoteBtn);
+    show(saveNoteBtn);
   } else {
     show(saveNoteBtn);
   }
