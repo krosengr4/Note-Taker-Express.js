@@ -1,4 +1,4 @@
-//! Handles the main javascript for showing elements, and saving and deleting notes.
+//? Handles the main javascript for showing elements, and saving and deleting notes.
 
 let noteForm;
 let noteTitle;

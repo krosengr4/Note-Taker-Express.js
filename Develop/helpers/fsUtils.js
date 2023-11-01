@@ -1,3 +1,5 @@
+//? This file contains helper functions to help read, write, and append data.
+
 const fs = require('fs');
 const util = require('util');
 

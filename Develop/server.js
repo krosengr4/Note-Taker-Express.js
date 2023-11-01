@@ -1,4 +1,4 @@
-//! This file contains the server data.
+//? This file contains the server data.
 
 const express = require('express'); 
 const fs = require('fs');
@@ -40,7 +40,9 @@ app.get('/notes', (req, res) => {
 
 //* This shows the notes that are in db.json file.
 app.get('/api/notes', (req, res) => {
-  res.json(allNotes); //! <--- Add ".slice(1)" to "(allNotes)"
+  console.log('Hello, the SERVER is glad to see you!');
+  
+  res.json(allNotes.slice(1)); //! <--- Add ".slice(1)" to "(allNotes)"
 });
 
 
@@ -49,22 +51,19 @@ app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, 'public/404.html'))
 );
 
-//// userNotes = fs.readFileSync("db/db.json", "utf-8");
-//// userNotes = JSON.parse(userNotes);
-//// res.json(userNotes);
 
-// TODO: Create code that saves new notes to db.json
+//* Function that saves new notes to db.json
 app.post('/api/notes', (req,res) => {
   console.info(`${req.method} request recieved to add a note`);
-
+  
   const { title, text } = req.body;
-
+  
   if (req.body) {
     const newNote = {
       title,
       text
     };
-
+    
     readAndAppend(newNote, './db/db.json');
     res.json('new note added sucessfully!');
   } else {
@@ -72,17 +71,17 @@ app.post('/api/notes', (req,res) => {
   } 
 });
 
-
 // TODO: Create code that displays saved notes in db.json
-
-
 // TODO: Create code that deletes a note from db.json when user selects delete. 
 // TODO: Create code that displays that the note has been deleted.
 
 
-
-
-
 app.listen(PORT, () =>
-  console.log(`port is http://localhost:${PORT}`)
+console.log(`port is http://localhost:${PORT}`)
 );
+
+
+
+//// userNotes = fs.readFileSync("db/db.json", "utf-8");
+//// userNotes = JSON.parse(userNotes);
+//// res.json(userNotes);

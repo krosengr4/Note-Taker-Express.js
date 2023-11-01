@@ -1,4 +1,4 @@
-//! This file handles the javascript for a /* request.
+//? This file handles the javascript for a /* request.
 
 // JS for the 404 page
 const goBackBtn = document.getElementById('back');
