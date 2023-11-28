@@ -40,9 +40,9 @@ app.get('/notes', (req, res) => {
 
 //* This shows the notes that are in db.json file.
 app.get('/api/notes', (req, res) => {
-  console.log('Hello, the SERVER is glad to see you!');
+  // console.log('Hello, the SERVER is glad to see you!');
   
-  res.json(allNotes.slice(1)); //! <--- Add ".slice(1)" to "(allNotes)"
+  res.json(allNotes);
 });
 
 
@@ -52,7 +52,7 @@ app.get('*', (req, res) =>
 );
 
 
-//* Function that saves new notes to db.json
+//* Function that saves new notes to db.json and displays them back on the screen
 app.post('/api/notes', (req,res) => {
   console.info(`${req.method} request recieved to add a note`);
   
@@ -71,17 +71,15 @@ app.post('/api/notes', (req,res) => {
   } 
 });
 
-// TODO: Create code that displays saved notes in db.json
-// TODO: Create code that deletes a note from db.json when user selects delete. 
-// TODO: Create code that displays that the note has been deleted.
+
 
 
 app.listen(PORT, () =>
 console.log(`port is http://localhost:${PORT}`)
 );
 
+////: Create code that displays saved notes in db.json
+// TODO: Create code that deletes a note from db.json when user selects delete. 
+// TODO: Create code that displays that the note has been deleted.
 
-
-//// userNotes = fs.readFileSync("db/db.json", "utf-8");
-//// userNotes = JSON.parse(userNotes);
-//// res.json(userNotes);
+// TODO: Find out how to show a saved note on the right side column whenever it is clicked.
