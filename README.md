@@ -28,3 +28,51 @@ that note appears in the right hand column, and a 'New Note' button appears in t
 
 <!-- When clicking on the 'New Note' button ^, 
  then I am presented with empty fields for a new note title and text, and the button dissapears-->
+
+ # Note Taker 
+ 
+![License Badge](https://img.shields.io/badge/License-MIT-blue.svg)
+
+## Table of Contents: 
+[Description](#description) 
+
+[Installation](#installation) 
+
+[Usage](#usage) 
+
+[Contributing](#contributing) 
+
+[Tests](#tests) 
+
+[License](#license) 
+
+[Questions](#questions) 
+
+
+## Description
+Note Taker is a simple application that lets a user take, view, and delete notes. 
+
+## Installation
+
+
+## Usage
+
+
+## Images
+![image]()
+
+## Contributing
+
+### Please contribute to this project:
+- [Submit Bugs and Request Features you'd like to see Implemented](https://github.com/krosengr4/Note-Taker-Express.js/issues)
+
+## Tests
+No tests available
+
+## License
+For more information about the license, please follow this link: https://opensource.org/license/mit/
+
+## Questions
+Here is the link to my Github Profile: https://github.com/krosengr4 
+
+For any additional questions, email me at rosenkev4@gmail.com
