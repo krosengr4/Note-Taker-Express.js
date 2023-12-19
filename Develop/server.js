@@ -71,6 +71,24 @@ app.post('/api/notes', (req,res) => {
   } 
 });
 
+app.delete("/api/notes/:id", function (req, res) {
+  try {
+    let userNotes = fs.readFileSync('./db/db.json', 'utf8');
+    userNotes = JSON.parse(userNotes);
+    userNotes = userNotes.filter(function(note) {
+      return note.id != req.params.id;
+    });
+    userNotes = JSON.stringify(userNotes);
+
+    fs.writeFile('./db/db.json', userNotes, "utf8", function(err) {
+      if (err) throw err;
+    });
+    res.send(JSON.parse(userNotes));
+  } catch (err) {
+    throw err;
+  }
+});
+
 
 
 
