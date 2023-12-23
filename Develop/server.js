@@ -5,26 +5,18 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 
-// Helper functions from /fsUtils.js
-// const {
-//   readFromFile,
-//   writeToFile, 
-//   readAndAppend,
-// } = require('./helpers/fsUtils');
-
 // import middlewear to create server
 const app = express();
+
 // Set up port listener
 const PORT = process.env.PORT || 3002;
 
 // Middleware for parsing application/json and urlencoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(express.static('public'));
 
-// Array for user notes
-// let userNotes = [];
+// require the json where notes are stored
 const userNotes = require('./db/db.json');
 
 
@@ -102,20 +94,11 @@ function deleteNote(id, notesArray) {
   }
 };
 
+// delete route that deletes a note by calling deleteNote function
 app.delete('/api/notes/:id', (req,res) => {
   deleteNote(req.params.id, userNotes);
   res.json(true);
 });
-
-
-// app.delete('/api/notes/:id', (req, res) => {
-//   deleteNote(req.params.id, userNotes);
-//   // alert('Note deleted');
-//   res.json(true);
-// });
-
-
-
 
 
 app.listen(PORT, () =>
@@ -123,64 +106,6 @@ console.log(`port is http://localhost:${PORT}`)
 );
 
 ////: Create code that displays saved notes in db.json
-// TODO: Create code that deletes a note from db.json when user selects delete. 
-// TODO: Create code that displays that the note has been deleted.
-
-// TODO: Find out how to show a saved note on the right side column whenever it is clicked.
-
-
-
-
-// app.delete("/api/notes/:id", function (req, res) {
-  //   try {
-    //     userNotes = fs.readFileSync('./db/db.json', 'utf8');
-    //     userNotes = JSON.parse(userNotes);
-    //     userNotes = userNotes.filter(function(note) {
-      //       return note.id != req.params.id;
-      //     });
-      //     userNotes = JSON.stringify(userNotes);
-      
-      //     fs.writeFile('./db/db.json', userNotes, "utf8", function(err) {
-        //       if (err) throw err;
-        //     });
-        //     res.send(JSON.parse(userNotes));
-        //   } catch (err) {
-          //     throw err;
-          //   }
-          // });
-          
-          
-          
-          
-          // console.info(`${req.method} request recieved to add a note`);
-          
-          // const { title, text } = req.body;
-          
-          // if (req.body) {
-            //   const newNote = {
-              //     title,
-              //     text
-              //   };
-              
-              //   readAndAppend(newNote, './db/db.json');
-              //   res.json('new note added sucessfully!');
-              // } else {
-                //   res.error('Error with adding your note')
-                // }
-                
-                
-
-                // function deleteNote(id, userNotes) {
-                //   for (i=0; i < userNotes.length; i++) {
-                //     let note = userNotes[i];
-                    
-                //     if (note.id == id) {
-                //       userNotes.splice(i, 1);
-                //       fs.writeFileSync(
-                //         path.join(__dirname, './db/db.json'),
-                //         JSON.stringify(userNotes, null, 2)
-                //         );
-                        
-                //         break;
-                //       }
-                //     }
+//// Create code that deletes a note from db.json when user selects delete. 
+//// Create code that displays that the note has been deleted.
+//// Find out how to show a saved note on the right side column whenever it is clicked.
