@@ -1,35 +1,4 @@
-# Note-Taker-Express.js
-A note taking application that can be used to write and save notes using express.js to retrieve from a json file.
-
-
-### Pseudo Coding:
-1- Import express, path, and fs with require.
-2- Create a server (app = express()), port listener, and array for noteData. 
-3- Set up middlewear (app.use & express.json)
-4- Do an api call response for the notes. 
-5- Have ^that^ data sent to browser in form of array object.
-6- Write new note to the json file and send back to browser.
-7- Delete existing note and reading the json file |
-8- write the new notes to the file and sending back to the browser
-
-### Acceptance Criteria:
-<!-- // When openig Note Taker, there is a landing page with a link to the notes page. -->
-
-<!--* On the notes page, 
-there are notes in the left hand column and empty fields to eneter a new note -->
-
-<!-- // When entering a new note title and text, a "save note" and "clear form" button appear in the upper right -->
-
-<!-- When clicking on 'save note', 
-that note along with other saved notes appear in the left hand column and the top right buttons dissapear -->
-
-<!-- When clicking on a previously saved note, 
-that note appears in the right hand column, and a 'New Note' button appears in the navigation -->
-
-<!-- When clicking on the 'New Note' button ^, 
- then I am presented with empty fields for a new note title and text, and the button dissapears-->
-
- # Note Taker 
+# Note Taker 
  
 ![License Badge](https://img.shields.io/badge/License-MIT-blue.svg)
 
@@ -50,16 +19,25 @@ that note appears in the right hand column, and a 'New Note' button appears in t
 
 
 ## Description
-Note Taker is a simple application that lets a user take, view, and delete notes. 
+Note Taker is a simple application that lets a user easily create, view, and delete notes. 
 
 ## Installation
+The dependencies needed to use Note Taker are 
+- express
+- node
 
 
 ## Usage
+To use this application: 
+- 1) Clone the repository code to your local device
+- 1) Install the dependencies needed.
+- 2) In the terminal, in the /Note-Taker-Express.js/Develop directory, run "node server.js" and follow the link provided.
+- 3) To save a note both the title and text forms must be filled out, and click save note in the upper right.
+- 4) To delete a note, click the delete button next to the saved note on the left side of the page.
 
 
 ## Images
-![image]()
+![image](/Develop/assets/image.png)
 
 ## Contributing
 
