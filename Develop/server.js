@@ -5,7 +5,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 
-//* Helper functions from /fsUtils.js
+// Helper functions from /fsUtils.js
 // const {
 //   readFromFile,
 //   writeToFile, 
@@ -23,8 +23,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-let userNotes = [];
-const allNotes = require('./db/db.json')
+// Array for user notes
+// let userNotes = [];
+const userNotes = require('./db/db.json');
 
 
 // Homepage whenever you open the localhost ("localhost:PORT/")
@@ -44,7 +45,7 @@ app.get('/notes', (req, res) => {
 app.get('/api/notes', (req, res) => {
   // console.log('Hello, the SERVER is glad to see you!');
   
-  res.json(allNotes);
+  res.json(userNotes);
 });
 
 
@@ -53,16 +54,43 @@ app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, 'public/404.html'))
 );
 
+// Function to create and display new note
+function createNewNote(body, notesArray) {
+  const newNote = body;
+  if (!Array.isArray(notesArray)) {
+    notesArray = [];
+  };
+
+  if (notesArray.length === 0) {
+    notesArray.push(0);
+  };
+
+  body.id = notesArray[0];
+  notesArray[0]++;
+
+  notesArray.push(newNote);
+  fs.writeFileSync(
+    path.join(__dirname, './db/db.json'),
+    JSON.stringify(notesArray, null, 2)
+  );
+  return newNote;
+};
+
+// Post route that creates a new note by calling createNewNote function.
+app.post('/api/notes', (req, res) => {
+  const newNote = createNewNote(req.body, userNotes);
+  res.json(newNote);
+});
+
 
 // Function that saves new notes to db.json and displays them back on the screen
-app.post('/api/notes', (req,res) => {});
 
 
-app.delete('/api/notes/:id', (req, res) => {
-  deleteNote(req.params.id, userNotes);
-  // alert('Note deleted');
-  res.json(true);
-});
+// app.delete('/api/notes/:id', (req, res) => {
+//   deleteNote(req.params.id, userNotes);
+//   // alert('Note deleted');
+//   res.json(true);
+// });
 
 
 
