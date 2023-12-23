@@ -1,86 +1,8 @@
 [
-  7,
+  12,
   {
-    "title": "This is my very first note",
-    "text": ".. sike"
-  },
-  {
-    "title": "Hello how yall doin",
-    "text": "Hello how yall doin"
-  },
-  {
-    "title": "Testing testing 123",
-    "text": "This is just adrill"
-  },
-  {
-    "title": "10/9",
-    "text": "this is a new note"
-  },
-  {
-    "title": "Hello ",
-    "text": "Hello"
-  },
-  {
-    "title": "This is a  note from just no",
-    "text": "rgwerg\n\n\n"
-  },
-  {
-    "title": "Test note 11/28",
-    "text": "This is a test note"
-  },
-  {
-    "title": "asdfasdf",
-    "text": "asdfasdf"
-  },
-  {
-    "title": "New note 12/18",
-    "text": "This is a test note to test the delete function"
-  },
-  {
-    "title": "Test delete",
-    "text": "this is to test delete function"
-  },
-  {
-    "title": "dsfa",
-    "text": "asdf",
-    "id": {
-      "title": "This is a test note",
-      "text": "This is a test note that shows if I can display this json info correctly "
-    }
-  },
-  {
-    "title": "asdf",
-    "text": "aSDF",
-    "id": null
-  },
-  {
-    "title": "1234",
-    "text": "1234",
-    "id": 1
-  },
-  {
-    "title": "tesdt",
-    "text": "qwertq",
-    "id": 2
-  },
-  {
-    "title": "asd",
-    "text": "asd",
-    "id": 3
-  },
-  {
-    "title": "ASDFASDFA",
+    "title": "Hello",
     "text": "ASD",
-    "id": 4
-  },
-  {
-    "title": "ASDF",
-    "text": "",
-    "id": 5
-  },
-  {
-    "title": "ASDF",
-    "text": "ASDFG",
-    "id": 6
+    "id": 11
   }
 ]

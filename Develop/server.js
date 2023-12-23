@@ -73,6 +73,8 @@ function createNewNote(body, notesArray) {
     path.join(__dirname, './db/db.json'),
     JSON.stringify(notesArray, null, 2)
   );
+  console.log('You created a note');
+
   return newNote;
 };
 
@@ -82,8 +84,28 @@ app.post('/api/notes', (req, res) => {
   res.json(newNote);
 });
 
+// Function that will delete a note
+function deleteNote(id, notesArray) {
+  for (let i = 0; i < notesArray.length; i++) {
+    let note = notesArray[i];
 
-// Function that saves new notes to db.json and displays them back on the screen
+    if (note.id == id) {
+      notesArray.splice(i, 1);
+      fs.writeFileSync(
+        path.join(__dirname, './db/db.json'),
+        JSON.stringify(notesArray, null, 2)
+      );
+      console.log('You deleted a note');
+
+      break;
+    }
+  }
+};
+
+app.delete('/api/notes/:id', (req,res) => {
+  deleteNote(req.params.id, userNotes);
+  res.json(true);
+});
 
 
 // app.delete('/api/notes/:id', (req, res) => {
